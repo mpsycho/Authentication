@@ -1,0 +1,1 @@
+Swagger authentication Bearer token (den maresei + prepei na grafeis Bearer 'toke')
