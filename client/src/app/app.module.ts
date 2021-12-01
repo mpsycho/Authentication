@@ -6,7 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
-import { SignupComponent } from './auth/signup/signup.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,7 +17,7 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
+    RegisterComponent,
     LoginComponent,
     HomeComponent,
     HeaderComponent,

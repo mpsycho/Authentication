@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AccountService } from 'src/app/_services/account.service';
 
 @Component({
   selector: 'app-sidenav-list',
@@ -8,12 +9,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class SidenavListComponent implements OnInit {
   @Output() closeSidenav = new EventEmitter<void>();
 
-  constructor() { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
   }
 
   onClose() {
+    this.accountService.logout();
     this.closeSidenav.emit();
   }
 

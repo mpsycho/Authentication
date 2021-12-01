@@ -1,21 +1,21 @@
-<section class="login-form">
-    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #loginform="ngForm" (ngSubmit)="login()">
+<section class="register-form">
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #registerform="ngForm" (ngSubmit)="onSubmit(registerform)">
+        <h2 class="text-center" color="primary">Register</h2>
         <mat-form-field>
             <input type="username" 
-            matInput 
-            placeholder="Your username" 
-            [(ngModel)]="model.username"
+            matInput placeholder="Your username"
+            ngModel 
             name="username"
             required
             #usernameInput="ngModel">
-            <mat-error *ngIf="usernameInput.hasError('required')">Email is required</mat-error>
-            <mat-error *ngIf="!usernameInput.hasError('required')">Invalid email</mat-error>
+            <mat-error *ngIf="usernameInput.hasError('required')">username is required</mat-error>
+            <mat-error *ngIf="!usernameInput.hasError('required')">Invalid username</mat-error>
         </mat-form-field>
         <mat-form-field hintLabel="Password must be at least 6 characters long">
             <input type="password" 
             matInput 
             placeholder="Your password" 
-            [(ngModel)]="model.password" 
+            ngModel 
             name="password"
             required
             minlength="6"
@@ -23,6 +23,6 @@
             <mat-hint align="end">{{ pwinput.value?.length }} / 6</mat-hint>
             <mat-error>Password has to be at least 6 characters</mat-error>
         </mat-form-field>
-        <button type="submit" mat-raised-button color="primary" [disabled]="loginform.invalid">Submit</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="registerform.invalid">Submit</button>
     </form>
 </section>
