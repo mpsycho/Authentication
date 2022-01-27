@@ -1,0 +1,9 @@
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.material-icons {
+    color: green;
+    vertical-align: middle;
+}

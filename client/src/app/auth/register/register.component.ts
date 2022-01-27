@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AccountService } from 'src/app/_services/account.service';
+import { DialogService } from 'src/app/_services/dialog.service';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ import { AccountService } from 'src/app/_services/account.service';
 export class RegisterComponent implements OnInit {
   model: any = {};
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService, private dialogService: DialogService, private el: ElementRef) { }
 
   ngOnInit(): void {
   }
@@ -24,7 +25,24 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log('form', form);
+    console.log('form', form.controls);
+    
+    //if valid form call api service and then depends on response open new dialog
+    if (form.invalid) {
+      this.dialogService.errorDialog({
+      title: 'Title',
+      inputs: this.el.nativeElement.querySelector('form mat-form-field .ng-invalid'),
+      confirmText: 'Close',
+      cancelText: '',
+    });
+  } else {
+      this.dialogService.notificationDialog({
+      title: 'Success Registration',
+      inputs: '',
+      confirmText: 'Ok',
+      cancelText: '',
+    });
+  }
     
   }
 

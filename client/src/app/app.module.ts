@@ -13,6 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { ErrorDialogComponent } from './_shared/error-dialog/error-dialog.component';
+import { ConfirmDialogComponent } from './_shared/confirm-dialog/confirm-dialog.component';
+import { NotificationDialogComponent } from './_shared/notification-dialog/notification-dialog.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    ErrorDialogComponent,
+    ConfirmDialogComponent,
+    NotificationDialogComponent
   ],
   imports: [
     BrowserModule,
