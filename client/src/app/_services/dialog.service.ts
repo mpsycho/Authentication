@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { DialogInterface } from '../_models/dialog';
-import { ErrorDialogComponent } from '../_shared/error-dialog/error-dialog.component';
-import { NotificationDialogComponent } from '../_shared/notification-dialog/notification-dialog.component';
+import { ErrorDialogComponent } from '../_shared/dialogs/error-dialog/error-dialog.component';
+import { NotificationDialogComponent } from '../_shared/dialogs/notification-dialog/notification-dialog.component';
 
 @Injectable({
   providedIn: 'root'

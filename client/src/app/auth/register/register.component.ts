@@ -2,6 +2,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AccountService } from 'src/app/_services/account.service';
 import { DialogService } from 'src/app/_services/dialog.service';
+import { SnackbarServiceService } from 'src/app/_services/snackbar-service.service';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,7 @@ import { DialogService } from 'src/app/_services/dialog.service';
 export class RegisterComponent implements OnInit {
   model: any = {};
 
-  constructor(private accountService: AccountService, private dialogService: DialogService, private el: ElementRef) { }
+  constructor(private accountService: AccountService, private dialogService: DialogService, private snackbarServiceService: SnackbarServiceService, private el: ElementRef) { }
 
   ngOnInit(): void {
   }
@@ -36,12 +37,15 @@ export class RegisterComponent implements OnInit {
       cancelText: '',
     });
   } else {
-      this.dialogService.notificationDialog({
-      title: 'Success Registration',
-      inputs: '',
-      confirmText: 'Ok',
-      cancelText: '',
-    });
+    //   this.dialogService.notificationDialog({
+    //   title: 'Success Registration',
+    //   inputs: '',
+    //   confirmText: 'Ok',
+    //   cancelText: '',
+    // });
+
+    this.snackbarServiceService.openSnackBar('Success Registration', '', '', '', 'green-snackbar');
+
   }
     
   }

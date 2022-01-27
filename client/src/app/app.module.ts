@@ -13,9 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
-import { ErrorDialogComponent } from './_shared/error-dialog/error-dialog.component';
-import { ConfirmDialogComponent } from './_shared/confirm-dialog/confirm-dialog.component';
-import { NotificationDialogComponent } from './_shared/notification-dialog/notification-dialog.component';
+import { ErrorDialogComponent } from './_shared/dialogs/error-dialog/error-dialog.component';
+import { ConfirmDialogComponent } from './_shared/dialogs/confirm-dialog/confirm-dialog.component';
+import { NotificationDialogComponent } from './_shared/dialogs/notification-dialog/notification-dialog.component';
 
 @NgModule({
   declarations: [
