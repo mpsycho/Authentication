@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AccountService } from 'src/app/_services/account.service';
 import { DialogService } from 'src/app/_services/dialog.service';
 import { SnackbarServiceService } from 'src/app/_services/snackbar-service.service';
@@ -7,12 +8,17 @@ import { SnackbarServiceService } from 'src/app/_services/snackbar-service.servi
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
   model: any = {};
 
-  constructor(private accountService: AccountService, private dialogService: DialogService, private snackbarServiceService: SnackbarServiceService, private el: ElementRef) { }
+  constructor(private accountService: AccountService, 
+              private dialogService: DialogService, 
+              private snackbarServiceService: SnackbarServiceService, 
+              private router: Router,
+              private el: ElementRef
+              ) { }
 
   ngOnInit(): void {
   }
@@ -45,6 +51,8 @@ export class RegisterComponent implements OnInit {
     // });
 
     this.snackbarServiceService.openSnackBar('Success Registration', '', '', '', 'green-snackbar');
+    this.router.navigate(['/home'])
+
 
   }
     
