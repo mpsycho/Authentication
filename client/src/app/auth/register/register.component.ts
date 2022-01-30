@@ -33,6 +33,9 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     console.log('form', form.controls);
+
+    console.log('model', this.model);
+    
     
     //if valid form call api service and then depends on response open new dialog
     if (form.invalid) {

@@ -1,29 +1,27 @@
 <section class="login-form">
-    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #loginform="ngForm" (ngSubmit)="login()">
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" [formGroup]="form" (ngSubmit)="login()">
         <h2>Login</h2>
         <mat-form-field>
             <input type="username" 
             matInput 
-            placeholder="Your username" 
-            [(ngModel)]="model.username"
+            placeholder="Your username"
+            [formControlName]="formFieldName.username"
             name="username"
-            required
-            #usernameInput="ngModel">
-            <mat-error *ngIf="usernameInput.hasError('required')">Email is required</mat-error>
-            <mat-error *ngIf="!usernameInput.hasError('required')">Invalid email</mat-error>
+            required>
+            <mat-error *ngIf="form.controls.username.hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="!form.controls.username.hasError('required')">Invalid email</mat-error>
         </mat-form-field>
         <mat-form-field hintLabel="Password must be at least 6 characters long">
             <input type="password" 
             matInput 
             placeholder="Your password" 
-            [(ngModel)]="model.password" 
+            [formControlName]="formFieldName.password" 
             name="password"
             required
-            minlength="6"
-            #pwinput="ngModel">
-            <mat-hint align="end">{{ pwinput.value?.length }} / 6</mat-hint>
+            minlength="6">
+            <mat-hint align="end">{{ form.controls.password.value?.length }} / 6</mat-hint>
             <mat-error>Password has to be at least 6 characters</mat-error>
         </mat-form-field>
-        <button type="submit" mat-raised-button color="primary" [disabled]="loginform.invalid">Submit</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Submit</button>
     </form>
 </section>

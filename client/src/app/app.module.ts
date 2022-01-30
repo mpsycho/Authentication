@@ -10,7 +10,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { ErrorDialogComponent } from './_shared/dialogs/error-dialog/error-dialog.component';
@@ -31,12 +31,13 @@ import { NotificationDialogComponent } from './_shared/dialogs/notification-dial
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
     AppRoutingModule,
-    FlexLayoutModule,
-    FormsModule
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
