@@ -16,27 +16,21 @@ import { AccountService } from 'src/app/_services/account.service';
 export class LoginComponent implements OnInit {
   form!: FormGroup;
   formFieldName = FormFieldName;
-
   
   constructor(public accountService: AccountService, private router: Router) { 
     this.form = this.initForm();
   }
 
-  
-
   ngOnInit(): void {
   }
 
   // Here is how you can set reactive forms up for better form typings in your Angular form.
+  // https://javascript.plainenglish.io/angular-form-typings-support-that-every-dev-needs-e198d4c1b63d
   private initForm(): FormGroup {
     return new FormGroup({
       [FormFieldName.username]: new FormControl(null),
       [FormFieldName.password]: new FormControl(null)
     }) as myFormGroup;
-  }
-
-  handleSubmit(): void {
-
   }
 
   login() {
